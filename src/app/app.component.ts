@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  imgParent = 'https://image.shutterstock.com/image-photo/artistic-image-magic-tree-260nw-2272706835.jpg';
+  imgParent = '';
+
+  onloaded(img: string) {
+    console.log('log padre', img);
+  }
 }
