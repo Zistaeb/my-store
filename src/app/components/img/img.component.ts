@@ -16,7 +16,7 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
     //code
   }
 
-  //@Input() img: string = ''; 
+  //@Input() img: string = '';
   @Input() alt: string = '';
 
   @Output() loaded = new EventEmitter<string>();
@@ -45,10 +45,10 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
     //before render
     //se puede correr cosas async -- fetch, llamadas API, promesas -- corre una sola vez
     console.log('ngOnInit', 'imgValue =>', this.img);
-    this.counterFn = window.setInterval(() => {
+    /*this.counterFn = window.setInterval(() => {
       this.counter += 1;
       console.log("run couter")
-    }, 1000)
+    }, 1000)*/
   }
 
   ngAfterViewInit(): void {
