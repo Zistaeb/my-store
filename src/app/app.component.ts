@@ -7,6 +7,7 @@ import { Product } from './models/product.model'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   imgParent = '';
 
