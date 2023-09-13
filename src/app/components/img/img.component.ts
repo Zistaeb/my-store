@@ -5,6 +5,7 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewIni
   templateUrl: './img.component.html',
   styleUrls: ['./img.component.scss']
 })
+
 export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 
   img: string = '';

@@ -1,22 +1,29 @@
 <div class="show-mobile">
   <div>
-    <button>
-      <img src="./../../../assets/images/menu.png" alt="menu" />
+    <button (click)="toggleMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
     </button>
     <a href="">
-      <img src="./../../../assets/images/YardSale.png" alt="logo"/>
+      <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
     </a>
     <a href="">
-      <img src="./../../../assets/images/car.png" alt="car"/>
+      <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
     </a>
   </div>
+  <div class="side-menu" [class.active]="activeMenu">
+    <button (click)="toggleMenu()">Close</button>
+    <ul>
+      <li><a href="">All</a></li>
+      <li><a href="">Clothes</a></li>
+      <li><a href="">Electronics</a></li>
+    </ul>
+  </div>
 </div>
-
 <div class="hide-mobile">
   <div>
     <nav>
-      <a class="logo"  href="">
-        <img src="./../../../assets/images/YardSale.png" alt="logo"/>
+      <a class="logo" href="">
+        <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
       </a>
       <ul>
         <li><a href="">All</a></li>
@@ -25,10 +32,10 @@
       </ul>
     </nav>
     <div class="info">
-      <div class="account">betty@mail.com</div>
+      <div class="account">nicolas@nicolas.com</div>
       <div>
         <a href="">
-          <img src="./../../../assets/images/car.png" alt="car"/>
+          <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
         </a>
       </div>
     </div>
