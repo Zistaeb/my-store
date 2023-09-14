@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from '../../models/product.model';
+import { StoreService } from '../../services/store.service';
 
 @Component({
   selector: 'app-products',
@@ -55,15 +56,19 @@ export class ProductsComponent implements OnInit {
     },
   ]
 
-  constructor() {}
+  constructor(
+    private storeService: StoreService              //patron inyeccion de dependencia
+  ) {
+    this.myShoppingCar = this.storeService.getShoppingCar();
+  }
 
   ngOnInit(): void {
 
   }
 
   onAddToShoppingCar(product: Product) {
-    this.myShoppingCar.push(product);
-    this.total = this.myShoppingCar.reduce((sum,item) => sum + item.price, 0)
+    this.storeService.addProduct(product);
+    this.total = this.storeService.getTotal();
   }
 
 }
