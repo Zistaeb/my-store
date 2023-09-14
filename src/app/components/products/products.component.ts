@@ -6,8 +6,10 @@ import {Product} from '../../models/product.model';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
 
+export class ProductsComponent implements OnInit {
+  myShoppingCar: Product[] = [];
+  total = 0;
   products: Product[] = [
     {
       id: '1',
@@ -59,5 +61,9 @@ export class ProductsComponent implements OnInit {
 
   }
 
+  onAddToShoppingCar(product: Product) {
+    this.myShoppingCar.push(product);
+    this.total = this.myShoppingCar.reduce((sum,item) => sum + item.price, 0)
+  }
 
 }
